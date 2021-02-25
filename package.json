@@ -1,0 +1,22 @@
+{
+  "name": "neptun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/19Makos99/SzerverOldaliJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/19Makos99/SzerverOldaliJS/issues"
+  },
+  "homepage": "https://github.com/19Makos99/SzerverOldaliJS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
