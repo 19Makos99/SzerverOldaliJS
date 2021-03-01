@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Neptun</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">Adatok módosítása</h1>
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <table class="table table-borderless">
+                        <div>
+                            <tr>
+                                <td class="col-3 text-end align-middle">
+                                    Jelenlegi tárgy név:
+                                </td>
+                                <td class="col-3 align-middle">
+                                    Analízis
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <form class="col-6" action="/targyak.html">
+                    <table class="table table-borderless">
+                        <tr>
+                            <div class="form-group">
+                                <td class="col-3 text-end align-middle">
+                                    <label for="nev">
+                                        Új tárgy név:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="nev">
+                                </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <td class="col-3 text-end">
+                                <input type="submit" class="btn btn-success" value="Új adatok mentése">
+                            </td>
+                            <td class="col-3 text-start">
+                                <input type="submit" class="btn btn-danger" value="Mégsem">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

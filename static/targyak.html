@@ -10,25 +10,22 @@
     <body>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">NEPTUN</a>
+                <a class="navbar-brand" href="/index.html">NEPTUN</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="#">Diákok kezelése<span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="/targyak.html">Tárgyak kezelése</a>
+                        <a class="nav-item nav-link" href="/index.html">Diákok kezelése</a>
+                        <a class="nav-item nav-link active" href="#">Tárgyak kezelése<span class="sr-only">(current)</span></a>
                     </div>
                 </div>
             </nav>
-            <h1 class="text-center">Diákok kezelése</h1>
+            <h1 class="text-center">Tárgyak kezelése</h1>
             <table class="table table-striped table-bordered">
                 <tr>
                     <th class="col-6">
-                        Diákok
-                    </th>
-                    <th class="col-2 text-center">
-                        Tárgyfelvétel
+                        Tárgyak
                     </th>
                     <th class="col-2 text-center">
                         Szerkesztés
@@ -39,21 +36,40 @@
                 </tr>
                 <tr>
                     <td class="align-middle">
-                        Kiss Ádám
+                        Analízis
                     </td>
                     <td class="text-center">
-                        <a class="btn btn-primary" href="/targyfelvetel.html"><i class="fas fa-book"></i></a>
-                    </td>
-                    <td class="text-center">
-                        <a class="btn btn-primary" href="/modosit.html"><i class="fas fa-tools"></i></a>
+                        <a class="btn btn-primary" href="/targymodosit.html"><i class="fas fa-tools"></i></a>
                     </td>
                     <td class="text-center">
                         <a class="btn btn-primary" href="#"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-center">
-                        <a href="/ujdiak.html" class="btn btn-primary btn-lng col-lg-6">Új diák hozzáadása</a>
+                    <td class="align-middle">
+                        Programozás
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary" href="/targymodosit.html"><i class="fas fa-tools"></i></a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary" href="#"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="align-middle">
+                        Számelmélet
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary" href="/targymodosit.html"><i class="fas fa-tools"></i></a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-primary" href="#"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-center">
+                        <a href="/ujtargy.html" class="btn btn-primary btn-lng col-lg-6">Új tárgy hozzáadása</a>
                     </td>
                 </tr>
             </table>
