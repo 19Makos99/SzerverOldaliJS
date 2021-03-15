@@ -1,0 +1,73 @@
+- index.html diákok kilistázása
+- ujdiak.html új diák hozzáadása
+- modosit.html egy diák módosítása
+- targyfelvetel.html egy diák tárgyának felvétele/leadása
+
+- targyak.html tárgyak kilistázása
+- ujtargy.html új tárgy hozzáadása
+- targymodosit.html egy tárgy módosítása
+
+
+middleware/
+    renderMW.js
+
+middleware/diak/
+    deleteStudentMW.js
+    getStudentMW.js
+    getStudendsMW.js
+    getSubjectStatesMW.js
+    saveStudentMW.js
+    saveSubjectStateMW.js
+
+middleware/targy/
+    deleteSubjectMW.js
+    getSubjectMW.js
+    getSubjectsMW.js
+    saveSubjectMW.js
+
+GET /
+    getStudendsMW
+    renderMW(index.html)
+
+GET, POST /diak/new
+    saveStudentMW - POST
+    renderMW(ujdiak.html)
+
+GET, POST /diak/edit/:diakid
+    getStudentMW
+    saveStudentMW - POST
+    renderMW(modosit.html)
+
+GET /diak/delete/:diakid
+    getStudentMW
+    deleteStudentMW
+
+GET /diak/targyfelvetel/:diakid
+    getStudentMW
+    getSubjectsMW
+    getSubjectStatesMW
+    renderMW(targyfelvetel.html)
+
+POST /diak/targyfelvetel/:diakid/edit/:targyid
+    getStudentMW
+    getSubjectsMW
+    saveSubjectStateMW
+
+
+
+GET /targy/list
+    getSubjectsMW
+    renderMW(targyak.html)
+
+GET, POST /targy/new
+    saveSubjectMW - POST
+    render(ujtargy.html)
+
+GET, POST /targy/edit/:targyid
+    getSubjectMW
+    saveSubjectMW - POST
+    renderMW(targymodosit.html)
+
+GET /targy/delete/:targyid
+    getSubjectMW
+    deleteSubjectMW

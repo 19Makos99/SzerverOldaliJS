@@ -1,6 +1,8 @@
 let express = require("express");
 let app = express();
 
+require("./route.js")(app);
+
 app.use(express.static("static"));
 
 const PORT = 3000;
