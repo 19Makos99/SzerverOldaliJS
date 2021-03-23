@@ -4,6 +4,6 @@
 
 module.exports = function(objRepo) {
     return function (req, res, next) {
-        next();
+        res.redirect("/diak/targyfelvetel/0");
     };
 }

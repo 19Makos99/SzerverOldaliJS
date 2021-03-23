@@ -1,0 +1,40 @@
+<%- include("header", { title: "Neptun"}) -%>
+            <h1 class="text-center">Diákok kezelése</h1>
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <th class="col-6">
+                        Diákok
+                    </th>
+                    <th class="col-2 text-center">
+                        Tárgyfelvétel
+                    </th>
+                    <th class="col-2 text-center">
+                        Szerkesztés
+                    </th>
+                    <th class="col-2 text-center">
+                        Törlés
+                    </th>
+                </tr>
+                <% diakok.forEach(diak => { %>
+                    <tr>
+                        <td class="align-middle">
+                            <%= diak.nev %>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-primary" href="/diak/targyfelvetel/<%= diak.id %>"><i class="fas fa-book"></i></a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-primary" href="/diak/edit/<%= diak.id %>"><i class="fas fa-tools"></i></a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-primary" href="/diak/delete/<%= diak.id %>"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="4" class="text-center">
+                        <a href="/diak/new" class="btn btn-primary btn-lng col-lg-6">Új diák hozzáadása</a>
+                    </td>
+                </tr>
+            </table>
+<%- include("footer") -%>

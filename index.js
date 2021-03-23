@@ -1,9 +1,10 @@
 let express = require("express");
 let app = express();
+app.set("view engine", "ejs");
 
 require("./route.js")(app);
 
-app.use(express.static("static"));
+//app.use(express.static("static"));
 
 const PORT = 3000;
 

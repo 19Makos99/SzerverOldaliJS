@@ -14,7 +14,7 @@ middleware/
 middleware/diak/
     deleteStudentMW.js
     getStudentMW.js
-    getStudendsMW.js
+    getStudentsMW.js
     getSubjectStatesMW.js
     saveStudentMW.js
     saveSubjectStateMW.js

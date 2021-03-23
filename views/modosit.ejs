@@ -1,0 +1,53 @@
+<%- include("header", { title: "Adatok módosítása"}) -%>
+            <h1 class="text-center">Adatok módosítása</h1>
+            <div class="row justify-content-center">
+                <form class="col-6" action="/diak/edit/<%= diak.id %>" method="POST">
+                    <table class="table table-borderless">
+                        <tr>
+                            <div class="form-group">
+                                <td class="col-3 text-end align-middle">
+                                    <label for="nev">
+                                        Név:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="nev" value="<%= diak.nev%>">
+                                </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="form-group">
+                                <td class="col-3 text-end align-middle">
+                                    <label for="lakcim">
+                                        Lakcím:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="lakcim" value="<%= diak.lakcim%>">
+                                </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <div class="form-group">
+                                <td class="col-3 text-end align-middle">
+                                    <label for="azonosito">
+                                        Személy azonosító szám:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="azonosito" value="<%= diak.azonosito%>">
+                                </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <td class="col-3 text-end">
+                                <input type="submit" class="btn btn-success" value="Új adatok mentése">
+                            </td>
+                            <td class="col-3 text-start">
+                                <a href="/" class="btn btn-danger">Mégsem</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+<%- include("footer") -%>

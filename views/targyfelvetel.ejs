@@ -1,0 +1,50 @@
+<%- include("header", { title: "Tárgyfelvétel"}) -%>
+            <h1 class="text-center">Tárgyfelvétel</h1>
+            <div class="row justify-content-center">
+                <p class="text-center">Kiválasztott diák: <%= diak.nev %></p>
+                <div class="col-6">
+                    <table class="table table-borderless table-bordered">
+                        <tr>
+                            <th class="col-4 align-middle">
+                                Tantárgy
+                            </th>
+                            <th class="col-1">
+                                Felvétel
+                            </th>
+                            <th class="col-1">
+                                Leadás
+                            </th>
+                        </tr>
+                        <% diak.targyak.forEach(targy => { %> 
+                            <tr>
+                                <input type="hidden" value="lead">
+                                <td class="col-4 align-middle">
+                                    <%= targy.nev %>:
+                                </td>
+                                <td class="col-1">
+                                    <% if (targy.felveve) { %> 
+                                        <form action="/diak/targyfelvetel/<%= diak.id %>/edit/<%= targy.id %>" method="POST">
+                                            <input type="submit" class="btn btn-primary form-control" value="X">
+                                            <input type="hidden" name="muvelet" value="felvetel">
+                                        </form>
+                                    <% } %> 
+                                </td>
+                                <td class="col-1">
+                                    <% if (!targy.felveve) { %> 
+                                        <form action="/diak/targyfelvetel/<%= diak.id %>/edit/<%= targy.id %>" method="POST">
+                                            <input type="submit" class="btn btn-primary form-control" value="X">
+                                            <input type="hidden" name="muvelet" value="leadas">
+                                        </form>
+                                    <% } %> 
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </table>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <a class="btn btn-secondary col-2" href="/">
+                    Vissza
+                </a>
+            </div>
+<%- include("footer") -%>

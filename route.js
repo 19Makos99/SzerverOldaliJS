@@ -1,7 +1,7 @@
 const renderMW = require("./middleware/renderMW.js");
 const deleteStudentMW = require("./middleware/diak/deleteStudentMW.js");
 const getStudentMW = require("./middleware/diak/getStudentMW.js");
-const getStudendsMW = require("./middleware/diak/getStudendsMW.js");
+const getStudentsMW = require("./middleware/diak/getStudentsMW.js");
 const getSubjectStatesMW = require("./middleware/diak/getSubjectStatesMW.js");
 const saveStudentMW = require("./middleware/diak/saveStudentMW.js");
 const saveSubjectStateMW = require("./middleware/diak/saveSubjectStateMW.js");
@@ -20,7 +20,7 @@ module.exports = function(app) {
     });
 
     app.get("/",
-        getStudentMW(objRepo),
+        getStudentsMW(objRepo),
         renderMW(objRepo, "index")
     );
     
@@ -30,7 +30,7 @@ module.exports = function(app) {
     );
 
     app.use("/diak/edit/:diakid",
-        getStudendsMW(objRepo),
+        getStudentMW(objRepo),
         saveStudentMW(objRepo),
         renderMW(objRepo, "modosit")
     );

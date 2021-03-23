@@ -1,0 +1,49 @@
+<%- include("header", { title: "Új diák hozzáadása"}) -%>
+            <h1 class="text-center">Új diák hozzáadása</h1>
+            <div class="row justify-content-center">
+                <form class="col-6" action="/diak/new" method="POST">
+                    <table class="table table-borderless table-bordered">
+                        <div class="form-group">
+                            <tr>
+                                <td class="col-3 text-end align-middle">
+                                    <label for="nev">
+                                        Név:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="nev">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-3 text-end align-middle">
+                                    <label for="lakcim">
+                                        Lakcím:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="lakcim">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-3 text-end align-middle">
+                                    <label for="azonosito">
+                                        Személy azonosító szám:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="azonosito">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-3 text-end">
+                                    <input type="submit" class="btn btn-success" value="Új diák hozzáadása">
+                                </td>
+                                <td class="col-3 text-start">
+                                    <a href="/" class="btn btn-danger">Mégsem</a>
+                                </td>
+                            </tr>
+                        </div>
+                    </table>
+                </form>
+            </div>
+<%- include("footer") -%>

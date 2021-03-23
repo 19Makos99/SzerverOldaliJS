@@ -1,0 +1,30 @@
+<%- include("header", { title: "Adatok módosítása"}) -%>
+            <h1 class="text-center">Adatok módosítása</h1>
+            <div class="row justify-content-center">
+                <form class="col-6" action="/targy/edit/<%= targy.id %>" method="POST">
+                    <table class="table table-borderless">
+                        <tr>
+                            <div class="form-group">
+                                <td class="col-3 text-end align-middle">
+                                    <label for="nev">
+                                        Új tárgy név:
+                                    </label>
+                                </td>
+                                <td class="col-3">
+                                    <input type="text" class="form-control" id="nev" value="<%= targy.nev %>">
+                                </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <td class="col-3 text-end">
+                                <input type="submit" class="btn btn-success" value="Új adatok mentése">
+                            </td>
+                            <td class="col-3 text-start">
+                                <a href="/targy/list" class="btn btn-danger">Mégsem</a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+<%- include("footer") -%>
