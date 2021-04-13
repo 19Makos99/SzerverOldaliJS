@@ -22,16 +22,16 @@
                                     <%= targy.nev %>:
                                 </td>
                                 <td class="col-1">
-                                    <% if (targy.felveve) { %> 
-                                        <form action="/diak/targyfelvetel/<%= diak.id %>/edit/<%= targy.id %>" method="POST">
+                                    <% if (!targy.felveve) { %> 
+                                        <form action="/diak/targyfelvetel/<%= diak.id %>/edit/<%= targy._id %>" method="POST">
                                             <input type="submit" class="btn btn-primary form-control" value="X">
                                             <input type="hidden" name="muvelet" value="felvetel">
                                         </form>
                                     <% } %> 
                                 </td>
                                 <td class="col-1">
-                                    <% if (!targy.felveve) { %> 
-                                        <form action="/diak/targyfelvetel/<%= diak.id %>/edit/<%= targy.id %>" method="POST">
+                                    <% if (targy.felveve) { %> 
+                                        <form action="/diak/targyfelvetel/<%= diak.id %>/edit/<%= targy._id %>" method="POST">
                                             <input type="submit" class="btn btn-primary form-control" value="X">
                                             <input type="hidden" name="muvelet" value="leadas">
                                         </form>

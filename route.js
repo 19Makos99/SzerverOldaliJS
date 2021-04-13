@@ -2,16 +2,25 @@ const renderMW = require("./middleware/renderMW.js");
 const deleteStudentMW = require("./middleware/diak/deleteStudentMW.js");
 const getStudentMW = require("./middleware/diak/getStudentMW.js");
 const getStudentsMW = require("./middleware/diak/getStudentsMW.js");
-const getSubjectStatesMW = require("./middleware/diak/getSubjectStatesMW.js");
 const saveStudentMW = require("./middleware/diak/saveStudentMW.js");
-const saveSubjectStateMW = require("./middleware/diak/saveSubjectStateMW.js");
+const saveStudentClassMW = require("./middleware/diak/saveStudentClassMW.js");
 const deleteSubjectMW = require("./middleware/targy/deleteSubjectMW.js");
 const getSubjectMW = require("./middleware/targy/getSubjectMW.js");
 const getSubjectsMW = require("./middleware/targy/getSubjectsMW.js");
 const saveSubjectMW = require("./middleware/targy/saveSubjectMW.js");
 
+const TargyModel = require("./models/tantargy");
+const DiakModel = require("./models/diak");
 module.exports = function(app) {
-    const objRepo = {};
+    const objRepo = {
+        TargyModel: TargyModel,
+        DiakModel: DiakModel
+    };
+
+    app.use((err, req, res, next) => {
+        console.log("HIBA: " + err);
+        res.end("Hiba");
+    });
 
     app.use("*", function(req, res, next) {
         console.log("Beérkező request");
@@ -23,8 +32,9 @@ module.exports = function(app) {
         getStudentsMW(objRepo),
         renderMW(objRepo, "index")
     );
-    
+
     app.use("/diak/new",
+        getSubjectsMW(objRepo),
         saveStudentMW(objRepo),
         renderMW(objRepo, "ujdiak")
     );
@@ -42,15 +52,13 @@ module.exports = function(app) {
 
     app.get("/diak/targyfelvetel/:diakid",
         getStudentMW(objRepo),
-        getSubjectMW(objRepo),
-        getSubjectStatesMW(objRepo),
         renderMW(objRepo, "targyfelvetel")
     );
 
     app.post("/diak/targyfelvetel/:diakid/edit/:targyid",
         getStudentMW(objRepo),
         getSubjectsMW(objRepo),
-        saveSubjectStateMW(objRepo)
+        saveStudentClassMW(objRepo)
     );
 
 
@@ -60,6 +68,7 @@ module.exports = function(app) {
     );
 
     app.use("/targy/new",
+        getStudentsMW(objRepo),
         saveSubjectMW(objRepo),
         renderMW(objRepo, "ujtargy")
     );
@@ -72,6 +81,7 @@ module.exports = function(app) {
 
     app.get("/targy/delete/:targyid",
         getSubjectMW(objRepo),
+        getStudentsMW(objRepo),
         deleteSubjectMW(objRepo)
     );
 }

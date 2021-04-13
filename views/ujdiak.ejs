@@ -11,7 +11,7 @@
                                     </label>
                                 </td>
                                 <td class="col-3">
-                                    <input type="text" class="form-control" id="nev">
+                                    <input type="text" class="form-control" name="nev" id="nev" <% if (typeof diak !== "undefined") { %> value="<%= diak.nev %>"<% } %>>
                                 </td>
                             </tr>
                             <tr>
@@ -21,7 +21,7 @@
                                     </label>
                                 </td>
                                 <td class="col-3">
-                                    <input type="text" class="form-control" id="lakcim">
+                                    <input type="text" class="form-control" name="lakcim" id="lakcim" <% if (typeof diak !== "undefined") { %> value="<%= diak.lakcim %>"<% } %>>
                                 </td>
                             </tr>
                             <tr>
@@ -31,7 +31,7 @@
                                     </label>
                                 </td>
                                 <td class="col-3">
-                                    <input type="text" class="form-control" id="azonosito">
+                                    <input type="text" class="form-control" name="azonosito" id="azonosito" <% if (typeof diak !== "undefined") { %> value="<%= diak.azonosito %>"<% } %>>
                                 </td>
                             </tr>
                             <tr>

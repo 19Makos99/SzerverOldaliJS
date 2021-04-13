@@ -2,9 +2,18 @@
  * Lekérdezi az összes tantárgyat
  */
 
+const requireOption = require("../requireOption");
+
 module.exports = function(objRepo) {
+    const TargyModel = requireOption(objRepo, "TargyModel");
+
     return function (req, res, next) {
-        res.locals.targyak = [{id:0, nev:"Analízis"}, {id: 1, nev:"Programozás"}, {id: 2, nev:"Számelmélet"}];
-        next();
+        TargyModel.find({}, (err, targyak) => {
+            if (err)
+                return next(err);
+            
+            res.locals.targyak = targyak;
+            return next();
+        });
     };
 }

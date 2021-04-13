@@ -4,7 +4,6 @@
 
 module.exports = function(objRepo, viewName) {
     return function (req, res, next) {
-        console.log(viewName);
         res.render(viewName, res.locals);
     };
 }

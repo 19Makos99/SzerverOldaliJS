@@ -2,31 +2,21 @@
  * Lekéri az adott id-vel rendelkező tanulót
  */
 
+const requireOption = require("../requireOption");
+
 module.exports = function(objRepo) {
+    const DiakModel = requireOption(objRepo, "DiakModel");
+
     return function (req, res, next) {
-        res.locals.diak = {
-            id: 0,
-            nev: "Kiss Ádám",
-            lakcim: "Budapest Petőfi Sándor utca 3",
-            azonosito: "123456789",
-            targyak: [
-                {
-                    id: 0,
-                    nev: "Analízis",
-                    felveve: true
-                },
-                {
-                    id: 1,
-                    nev: "Programozás",
-                    felveve: true
-                },
-                {
-                    id: 2,
-                    nev: "Számelmélet",
-                    felveve: false
-                }
-            ]
-        };
-        next();
+        if (req.params.diakid === undefined)
+            return next();
+        
+        DiakModel.findOne({_id: req.params.diakid}, (err, diak) => {
+            if (err)
+                return next(err);
+            
+            res.locals.diak = diak;
+            return next();
+        });
     };
 }
