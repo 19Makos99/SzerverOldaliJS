@@ -22,12 +22,6 @@ module.exports = function(app) {
         res.end("Hiba");
     });
 
-    app.use("*", function(req, res, next) {
-        console.log("Beérkező request");
-        res.charset = "utf8";
-        next();
-    });
-
     app.get("/",
         getStudentsMW(objRepo),
         renderMW(objRepo, "index")
