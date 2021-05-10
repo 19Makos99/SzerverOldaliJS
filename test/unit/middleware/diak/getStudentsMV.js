@@ -1,5 +1,5 @@
 let expect = require("chai").expect;
-let getStudentsMW = require("../../../middleware/diak/getStudentsMW");
+let getStudentsMW = require("../../../../middleware/diak/getStudentsMW");
 
 describe('getStudentsMW middleware', () => {
     it('should return all the users from the db', (done) => {

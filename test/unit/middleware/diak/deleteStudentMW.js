@@ -1,5 +1,5 @@
 let expect = require("chai").expect;
-let deleteStudentMW = require("../../../middleware/diak/deleteStudentMW");
+let deleteStudentMW = require("../../../../middleware/diak/deleteStudentMW");
 
 describe('deleteStudentMW middleware', () => {
     it('should call next with error when diak is undefined', (done) => {

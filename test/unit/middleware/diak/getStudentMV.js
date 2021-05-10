@@ -1,5 +1,5 @@
 let expect = require("chai").expect;
-let getStudentMW = require("../../../middleware/diak/getStudentMW");
+let getStudentMW = require("../../../../middleware/diak/getStudentMW");
 
 describe('getStudentMW middleware', () => {
     it('should do nothing when diakid is undefined', (done) => {
